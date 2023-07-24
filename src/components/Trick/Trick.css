@@ -1,0 +1,6 @@
+.trick {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    background-color: #eff8ff;
+}
