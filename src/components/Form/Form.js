@@ -4,9 +4,9 @@ const Form = ({ nextID, setTricks }) => {
     const [form, setForm] = useState({
         id: nextID,
         stance: "",
-        trickName: "",
+        name: "",
         obstacle: "",
-        link: ""
+        tutorial: ""
     })
     
     const handleChange = (e) => {
@@ -25,7 +25,7 @@ const Form = ({ nextID, setTricks }) => {
                 <option value='regular'>Regular</option>
                 <option value='switch'>Switch</option>
             </select>
-            <input name='trickName' value={form.trickName} onChange={handleChange} placeholder='Name of trick'></input>
+            <input name='name' value={form.name} onChange={handleChange} placeholder='Name of trick'></input>
             <select name='obstacle' type='text' value={form.obstacle} onChange={handleChange}>
                 <option default>Choose your Obstacle</option>
                 <option value='flatground'>Flatground</option>
@@ -34,7 +34,7 @@ const Form = ({ nextID, setTricks }) => {
                 <option value='stairs'>Stairs</option>
                 <option value='pool'>Pool</option>
             </select>
-            <input name='link' value={form.link} onChange={handleChange} placeholder='Link to Tutorial'></input>
+            <input name='tutorial' value={form.tutorial} onChange={handleChange} placeholder='Link to Tutorial'></input>
             <button onClick={handleSubmit}>Send It!</button>
         </form>
     )
