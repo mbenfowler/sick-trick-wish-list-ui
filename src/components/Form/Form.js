@@ -14,6 +14,17 @@ const Form = ({ nextID, setTricks }) => {
     }
 
     const handleSubmit = (e) => {
+        // fetch('http://localhost:3001/api/v1/tricks', {
+        //     method: 'POST',
+        //     headers: {
+        //     'Content-Type': 'application/json'
+        //     },
+        //     mode: 'cors',
+        //     body: form
+        // })
+        // .then(res => res.json)
+        // .then(data => console.log(data))
+        // .catch(err => console.error(err))
         setTricks(prev => ([...prev, form]))
         e.preventDefault()
     }
