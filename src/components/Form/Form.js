@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
-const Form = () => {
+const Form = ({ nextID, setTricks }) => {
     const [form, setForm] = useState({
+        id: nextID,
         stance: "",
         trickName: "",
         obstacle: "",
@@ -13,10 +14,10 @@ const Form = () => {
     }
 
     const handleSubmit = (e) => {
-        console.log('submitted')
+        setTricks(prev => ([...prev, form]))
+        e.preventDefault()
     }
     
-    console.log(form)
     return (
         <form onSubmit={handleSubmit}>
             <select name='stance' type='text' value={form.stance} onChange={handleChange}>
@@ -34,7 +35,7 @@ const Form = () => {
                 <option value='pool'>Pool</option>
             </select>
             <input name='link' value={form.link} onChange={handleChange} placeholder='Link to Tutorial'></input>
-            <button>Send It!</button>
+            <button onClick={handleSubmit}>Send It!</button>
         </form>
     )
 }

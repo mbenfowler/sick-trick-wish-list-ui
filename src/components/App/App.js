@@ -13,14 +13,14 @@ function App() {
       .catch(err => console.error(err))
   }, [])
   
-  
+  console.log(tricks)
   
   if (tricks) {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form />
-        <Tricks tricks={tricks}/>
+        <Form nextID={tricks.length + 1} setTricks={setTricks} />
+        <Tricks tricks={tricks} />
       </div>
     );
   }
