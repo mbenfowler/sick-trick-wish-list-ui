@@ -9,9 +9,9 @@ describe('User visting the home page', () => {
   it('should see relevent content', () => {
     cy.get('h1').contains('Sick Trick Wish List')
       .get('[name="stance"]').contains('Choose your Stance')
-      .get('[name="trickName"]')
+      .get('[name="name"]')
       .get('[name="obstacle"]').contains('Choose your Obstacle')
-      .get('[name="link"]')
+      .get('[name="tutorial"]')
       .get('.tricksContainer').children().should('have.length', 3)
   })
 })
