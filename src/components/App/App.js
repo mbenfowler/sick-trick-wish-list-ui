@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import Form from '../Form/Form'
 import Tricks from '../Tricks/Tricks'
 
 function App() {
@@ -10,14 +11,20 @@ function App() {
       .then(res => res.json())
       .then(data => setTricks(data))
       .catch(err => console.error(err))
-  })
+  }, [])
   
-  return (
-    <div className="App">
-      <h1>Sick Trick Wish List</h1>
-      <Tricks tricks={tricks}/>
-    </div>
-  );
+  
+  
+  if (tricks) {
+    return (
+      <div className="App">
+        <h1>Sick Trick Wish List</h1>
+        <Form />
+        <Tricks tricks={tricks}/>
+      </div>
+    );
+  }
+  
 }
 
 export default App; 
